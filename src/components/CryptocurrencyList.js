@@ -13,7 +13,7 @@ import CryptocurrencyItem from "./CryptocurrencyItem";
 
 class CryptocurrencyList extends Component {
   componentDidMount() {
-    // this.props.getCryptocurrencies(this.props.valute.name);
+    this.props.getCryptocurrencies(this.props.valute.name);
   }
   render() {
     const { cryptocurrencies } = this.props;
@@ -22,7 +22,7 @@ class CryptocurrencyList extends Component {
         <Button
           color="primary"
           onClick={() => {
-            // this.props.getCryptocurrencies(this.props.valute.name);
+            this.props.getCryptocurrencies(this.props.valute.name);
           }}
         >
           Refresh
