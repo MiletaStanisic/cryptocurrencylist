@@ -12,8 +12,8 @@ import CryptocurrencyDetails from "./components/CryptocurrencyDetails";
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Provider store={store}>
+      <Provider store={store}>
+        <Router>
           <Header />
           <Switch>
             <Route exact path="/" component={CryptocurrencyList} />
@@ -28,8 +28,8 @@ class App extends Component {
               component={CryptocurrencyDetails}
             />
           </Switch>
-        </Provider>
-      </Router>
+        </Router>
+      </Provider>
     );
   }
 }

@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import { TableCell, TableRow } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import CryptocurrencyDetails from "./CryptocurrencyDetails";
 
 class CryptoCurrencyItem extends Component {
-  getCryptocurrencyDetails = id => {};
-
   render() {
     const { cryptocurrency } = this.props;
     const detailsLink = `/details/${cryptocurrency.id}`;
@@ -14,7 +11,7 @@ class CryptoCurrencyItem extends Component {
       cryptocurrency.quote.EUR ||
       cryptocurrency.quote.CNY;
     return (
-      <TableRow>
+      <TableRow className="table-row">
         <TableCell>{cryptocurrency.cmc_rank}</TableCell>
         <TableCell>{cryptocurrency.symbol}</TableCell>
         <TableCell>{valuteName.price}</TableCell>

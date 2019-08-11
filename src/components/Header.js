@@ -8,7 +8,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <AppBar className="navbar" position="static">
+        <AppBar className="header" position="static">
           <ToolBar>
             <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
               <Typography variant="body1" color="inherit" id="title">

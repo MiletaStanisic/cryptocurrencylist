@@ -21,7 +21,9 @@ class CryptocurrencyList extends Component {
       <Paper style={{ margin: 20 }} className="list-paper">
         <Button
           color="primary"
-          // onClick={() => this.props.getCryptocurrencies(this.props.valute.name)}
+          onClick={() => {
+            // this.props.getCryptocurrencies(this.props.valute.name);
+          }}
         >
           Refresh
         </Button>
