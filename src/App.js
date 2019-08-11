@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Header from "./components/Header";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import store from "./store";
+import { Provider } from "react-redux";
+import CryptocurrencyList from "./components/CryptocurrencyList";
+import Settings from "./components/Settings";
+import CryptocurrencyDetails from "./components/CryptocurrencyDetails";
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Provider store={store}>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={CryptocurrencyList} />
+          </Switch>
+          <Switch>
+            <Route exact path="/settings" component={Settings} />
+          </Switch>
+          <Switch>
+            <Route
+              exact
+              path="/details/:id"
+              component={CryptocurrencyDetails}
+            />
+          </Switch>
+        </Provider>
+      </Router>
+    );
+  }
 }
 
 export default App;
